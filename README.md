@@ -1,6 +1,6 @@
 # Predicting medal counts for countries using historical Olympic data with machine learning.
 
-📌 Overview
+# Overview
 This project develops a predictive model to estimate the number of medals a country will win in the Olympics based on:
 - Number of athletes
 - Previous medal performance
