@@ -29,6 +29,6 @@ SHAP for interpretability
 Seaborn/Matplotlib for visualization
 
 📂 Files
-olympics_model.ipynb: Full analysis notebook
+Medalhas_Olímpicas.ipynb: Full analysis notebook
 
 times.csv: Raw dataset
