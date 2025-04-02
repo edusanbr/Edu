@@ -1,51 +1,52 @@
-Bioinformatics Project - Computational Drug Discovery
-📌 Overview
-This project is part of my learning journey in bioinformatics and computational drug discovery. It focuses on building machine learning models to predict the bioactivity of compounds targeting the acetylcholinesterase enzyme, which is relevant for Alzheimer's disease treatment.
-The project was developed based on the tutorial by Data Professor (https://www.youtube.com/watch?v=zD2focOkQ48), with additional enhancements including feature selection optimization and identification of the top 10 most promising compounds.
+# Machine Learning (Estudo Baseado em Tutorial)
+📌 Contexto do Projeto
+Este projeto foi desenvolvido como parte dos meus estudos em Machine Learning aplicado ao mercado financeiro, seguindo como base um tutorial online. O código foi implementado, analisado e adaptado para fins de aprendizagem pessoal, com o objetivo de entender na prática:
 
-🧬 Project Components
-1. Data Preparation
--  Collected bioactivity data from ChEMBL database
--  Processed IC50 values to pIC50 (negative log of IC50) for better model performance
--  Calculated molecular fingerprints using PaDEL descriptors
+-  Como aplicar modelos de ML em séries temporais financeiras
+-  Os desafios de previsão de preços de ativos
+-  Técnicas de pré-processamento para dados financeiros
+-  Comparação entre diferentes abordagens (Regressão Linear vs Redes Neurais)
 
-2. Feature Engineering
--  Applied variance threshold to remove low-variance features
--  Used SelectKBest for feature selection (top 100 most relevant features)
--  Split data into training (80%) and test (20%) sets
+🔍 Origem do Material Base
+O código inicial foi adaptado do tutorial disponível em:
+(insira aqui o link do vídeo/tutorial que você utilizou)
 
-3. Model Development
--  Implemented Random Forest regression as primary model
--  Compared performance of 42 different machine learning algorithms using LazyPredict
--  Visualized model performance metrics (R-squared, RMSE)
+🛠️ Tecnologias Utilizadas
+Python 3
 
-4. Enhancements
--  Identified and displayed the top 10 most promising compounds with:
--  ChEMBL IDs
--  Canonical SMILES
--  Experimental pIC50 values
--  Predicted pIC50 values
+-  Bibliotecas Principais:
+-  yfinance - Coleta de dados do mercado
+-  pandas - Manipulação de dados
+-  scikit-learn - Modelos de ML (Regressão Linear e MLP)
+-  matplotlib - Visualização dos resultados
 
-🛠️ Technologies Used
--  Python
-  -   Pandas
-  -  Scikit-learn
-  -  RDKit (via PaDEL descriptors)
-  -  LazyPredict
-  -  Matplotlib/Seaborn
+📈 Metodologia
+-  Coleta de Dados: 5 anos históricos de ITUB3.SA via Yahoo Finance
+-  Pré-processamento:
+-  Cálculo de médias móveis (5, 14 e 21 dias)
+-  Normalização dos dados (MinMaxScaler)
 
-📊 Key Results
-Random Forest achieved R² = 0.54 on test set
--  HistGradientBoosting showed best performance among all algorithms tested (R² = 0.45)
--  Identified promising compounds for further investigation
+Modelagem:
+-  Regressão Linear (baseline)
+-  Rede Neural MLP (Multilayer Perceptron)
 
-🎯 Learning Outcomes
-Through this project, I gained practical experience in:
+Validação:
+-  Divisão em conjuntos de treino/teste
+-  Métrica: Coeficiente de Determinação (R²)
 
--  Computational drug discovery pipelines
--  Molecular descriptor calculation
--  Machine learning for bioactivity prediction
--  Model evaluation and comparison
--  Feature selection techniques
+📊 Resultados Obtidos
+-  Modelo	R² Score	Observações
+-  Regressão Linear	99.84%	Melhor performance
+-  Rede Neural (MLP)	94.01%	Sensível a parâmetros
+-  
+💡 Principais Aprendizados
+-  Séries Temporais Financeiras são desafiadoras devido à alta volatilidade
+-  Feature Engineering (como médias móveis) é crucial para melhorar previsões
+-  Modelos Simples podem ter performance superior em alguns cenários
+-  A importância da validação cuidadosa para evitar overfitting
 
-The project serves as a foundation for more advanced work in cheminformatics and drug discovery.
+🚀 Melhorias Implementadas
+-  Adicionei visualizações mais completas dos resultados
+-  Implementei previsão para o próximo dia útil
+-  Adicionei tratamento de erros robusto
+-  Documentação detalhada do código
