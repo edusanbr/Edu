@@ -1,4 +1,5 @@
 Bioinformatics Project - Computational Drug Discovery
+
 📌 Overview
 This project is part of my learning journey in bioinformatics and computational drug discovery. It focuses on building machine learning models to predict the bioactivity of compounds targeting the acetylcholinesterase enzyme, which is relevant for Alzheimer's disease treatment.
 The project was developed based on the tutorial by Data Professor (https://www.youtube.com/watch?v=zD2focOkQ48), with additional enhancements including feature selection optimization and identification of the top 10 most promising compounds.
