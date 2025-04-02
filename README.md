@@ -1,36 +1,51 @@
-# Olympic Medal Prediction Model (Learning Project)
-Adapted from Dataquest Tutorial for educational purposes
+Bioinformatics Project - Computational Drug Discovery
+📌 Overview
+This project is part of my learning journey in bioinformatics and computational drug discovery. It focuses on building machine learning models to predict the bioactivity of compounds targeting the acetylcholinesterase enzyme, which is relevant for Alzheimer's disease treatment.
+The project was developed based on the tutorial by Data Professor (https://www.youtube.com/watch?v=zD2focOkQ48), with additional enhancements including feature selection optimization and identification of the top 10 most promising compounds.
 
-📌 Project Overview
-This project adapts a machine learning tutorial to predict Olympic medal counts, focusing on:
-- Practical implementation of regression techniques
-- Handling real-world data challenges
-- Developing actionable insights from model outputs
+🧬 Project Components
+1. Data Preparation
+-  Collected bioactivity data from ChEMBL database
+-  Processed IC50 values to pIC50 (negative log of IC50) for better model performance
+-  Calculated molecular fingerprints using PaDEL descriptors
 
-🔧 My Adaptations & Improvements
+2. Feature Engineering
+-  Applied variance threshold to remove low-variance features
+-  Used SelectKBest for feature selection (top 100 most relevant features)
+-  Split data into training (80%) and test (20%) sets
 
-# Key modifications I implemented:
-1. Enhanced visualization with Seaborn's pairplot and custom scatterplots
-2. Added temporal validation (pre/post 2012 split)
-3. Implemented log-transform for skewed target variable
-4. Developed intuitive error analysis by medal ranges
-   
-📊 Key Technical Insights
--  Aspect	Finding	Practical Implication
--  Top Predictor	Historical medals (2.1× impact)	Past performance matters most
--  Model Error	MAE = 3.3 medals	Reliable for macro-estimates
--  Data Challenge	50% zeros in target variable	Required log-transform
+3. Model Development
+-  Implemented Random Forest regression as primary model
+-  Compared performance of 42 different machine learning algorithms using LazyPredict
+-  Visualized model performance metrics (R-squared, RMSE)
 
-## Technical Stack
-- Python (pandas, scikit-learn)
-- SHAP for interpretability
-- Seaborn/Matplotlib for visualization
+4. Enhancements
+-  Identified and displayed the top 10 most promising compounds with:
+-  ChEMBL IDs
+-  Canonical SMILES
+-  Experimental pIC50 values
+-  Predicted pIC50 values
 
-💡 Learning Outcomes
-- Through this adaptation, I gained:
-- Hands-on experience with sklearn's pipeline
-- Understanding of log-transform for skewed data
-- Practical knowledge of temporal validation
-- Improved data storytelling skills
+🛠️ Technologies Used
+-  Python
+  -   Pandas
+  -  Scikit-learn
+  -  RDKit (via PaDEL descriptors)
+  -  LazyPredict
+  -  Matplotlib/Seaborn
 
-Note: This project was adapted from Dataquest's tutorial as part of my machine learning journey. The original code was significantly modified for enhanced analysis and visualization.
+📊 Key Results
+Random Forest achieved R² = 0.54 on test set
+-  HistGradientBoosting showed best performance among all algorithms tested (R² = 0.45)
+-  Identified promising compounds for further investigation
+
+🎯 Learning Outcomes
+Through this project, I gained practical experience in:
+
+-  Computational drug discovery pipelines
+-  Molecular descriptor calculation
+-  Machine learning for bioactivity prediction
+-  Model evaluation and comparison
+-  Feature selection techniques
+
+The project serves as a foundation for more advanced work in cheminformatics and drug discovery.
